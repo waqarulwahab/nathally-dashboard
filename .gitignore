@@ -1,11 +1,7 @@
 # Virtual environment
 myvenv/
-
-# Environment variables
-# .env
-
-# # Streamlit configuration directory
-# .streamlit/
+.streamlit/secrets.toml
+.env
 
 # Credentials file
 credentials.json
