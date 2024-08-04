@@ -146,9 +146,6 @@ def engagedSessions_plot(data, metric, dimensions):
     return fig
 
 
-
-
-
 def source_activeUsers(data):
     aggregated_data = data.groupby('source').sum().reset_index()
     data_for_chart = [
@@ -164,8 +161,7 @@ def source_activeUsers(data):
             "trigger": "item"
         },
         "legend": {
-            "orient": "horizontal",
-            "top": "top",
+            "show": False
         },
         "series": [
             {
@@ -177,11 +173,51 @@ def source_activeUsers(data):
                 "itemStyle": {
                     "borderRadius": 8
                 },
+                "label": {
+                    "show": False
+                },
+                "labelLine": {
+                    "show": True
+                },
                 "data": data_for_chart
             }
         ]
     }
     st_echarts(options=options, height="400px", width="650px")
+
+# def source_activeUsers(data):
+#     aggregated_data = data.groupby('source').sum().reset_index()
+#     data_for_chart = [
+#         {"value": row['activeUsers'], "name": row['source']}
+#         for index, row in aggregated_data.iterrows()
+#     ]
+#     options = {
+#         "title": {
+#             "text": "",
+#             "left": "center"
+#         },
+#         "tooltip": {
+#             "trigger": "item"
+#         },
+#         # "legend": {
+#         #     # "orient": "horizontal",
+#         #     # "top": "top",
+#         # },
+#         "series": [
+#             {
+#                 "name": "Active Users",
+#                 "type": "pie",
+#                 "radius": ["30%", "75%"],
+#                 "center": ["50%", "60%"],
+#                 "roseType": "area",
+#                 "itemStyle": {
+#                     "borderRadius": 8
+#                 },
+#                 "data": data_for_chart
+#             }
+#         ]
+#     }
+#     st_echarts(options=options, height="400px", width="650px")
 
 
 def eventName_eventCount_eventCountPerUser(data):

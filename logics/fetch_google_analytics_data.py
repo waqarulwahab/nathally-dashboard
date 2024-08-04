@@ -35,59 +35,6 @@ def initialize_ga4_client():
 
 
 
-
-
-
-
-
-
-
-# def initialize_ga4_client(key_path):
-#     try:
-#         # Check if the key_path is provided
-#         if not key_path:
-#             raise ValueError("Key path is not provided")
-
-#         # Check if the file exists at the given key_path
-#         if not os.path.exists(key_path):
-#             raise FileNotFoundError(f"Service account file not found at {key_path}")
-        
-#         # Load credentials from the service account file
-#         # credentials = credentials.Credentials.from_service_account_file(key_path)
-#         credentials = service_account.Credentials.from_service_account_file(key_path)
-        
-#         # Initialize the GA4 client
-#         client = BetaAnalyticsDataClient(credentials=credentials)
-        
-#         return client
-    
-#     except FileNotFoundError as e:
-#         st.write(f"FileNotFoundError: {e}")
-#         # Handle the error (e.g., logging, raising further, etc.)
-#         raise
-    
-#     except ValueError as e:
-#         st.write(f"ValueError: {e}")
-#         # Handle the error (e.g., logging, raising further, etc.)
-#         raise
-    
-#     except exceptions.GoogleAuthError as e:
-#         st.write(f"GoogleAuthError: {e}")
-#         # Handle the error (e.g., logging, raising further, etc.)
-#         raise
-
-#     except Exception as e:
-#         st.write(f"Unexpected error: {e}")
-#         # Handle the error (e.g., logging, raising further, etc.)
-#         raise
-
-# # Function to initialize the GA4 client
-# def initialize_ga4_client(key_path):
-#     credentials = service_account.Credentials.from_service_account_file(key_path)
-#     client = BetaAnalyticsDataClient(credentials=credentials)
-#     return client
-
-# Function to get all available metrics and dimensions
 def get_metadata(client, property_id):
     request = GetMetadataRequest(name=f'properties/{property_id}/metadata')
     response = client.get_metadata(request=request)

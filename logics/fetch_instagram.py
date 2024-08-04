@@ -55,26 +55,5 @@ def get_valid_metrics_by_days():
             'impressions', 'reach', 'profile_views', 'follower_count',
             'email_contacts', 'phone_call_clicks', 'text_message_clicks',
             'get_directions_clicks', 'website_clicks',
-            'views', 'threads_likes', 'threads_replies', 'reposts', 'quotes',
-            'threads_followers', 'threads_follower_demographics',
             ]
     return valid_metrics
-
-
-# INSTAGRAM METRICS
-# metric[16] must be one of the following 
-# values:   impressions, reach, follower_count, email_contacts, 
-#           phone_call_clicks, text_message_clicks, get_directions_clicks, 
-#           website_clicks, profile_views, online_followers, 
-#           accounts_engaged, total_interactions, likes, comments, 
-#           shares, saves, replies, engaged_audience_demographics, 
-#           reached_audience_demographics, follower_demographics, 
-#           follows_and_unfollows, profile_links_taps, views, 
-#           threads_likes, threads_replies, reposts, quotes, 
-#           threads_followers, threads_follower_demographics
-
-
-
-# period[0] must be one of the following 
-# values:  day, week, days_28, 
-#          month, lifetime, total_over_range
